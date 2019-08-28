@@ -36,14 +36,6 @@ public class MyWebSecurity extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                /*.antMatchers("/feedback").permitAll()
-                .antMatchers("/login").permitAll()
-                .antMatchers(HttpMethod.POST, "/teachers").permitAll()
-                .antMatchers(HttpMethod.POST,"/students").permitAll()
-                .antMatchers("/student").hasAnyRole("STUDENT")
-                .antMatchers("/teacher").hasAnyRole("TEACHER")
-                .antMatchers("/user").hasAnyRole("USER")
-                .antMatchers("/admin").hasAnyRole("ADMIN")*/
                 .anyRequest().authenticated()
 
                 .and()
