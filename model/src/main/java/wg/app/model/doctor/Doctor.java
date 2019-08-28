@@ -2,30 +2,34 @@ package wg.app.model.doctor;
 
 import lombok.*;
 import wg.app.model.Gender;
+import wg.app.model.Role;
+import wg.app.model.User;
 import wg.app.model.Visit;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 
 @Entity
 @Table(name = "doctors")
-public class Doctor
+public class Doctor extends User
 {
-    @Id
-    @GeneratedValue
-    private Long id;
 
-    private String name;
-    private String surname;
+    @Builder
+    public Doctor(Long id, String username, String password, Boolean enabled, Role role, String name, String surname, LocalDate dateOfBirth, String email, Gender gender, List<Specialization> specializations, Set<ServiceInfo> serviceInfos, List<Visit> visits) {
+        super(id, username, password, enabled, role, name, surname, dateOfBirth, email, gender);
+        this.specializations = specializations;
+        this.serviceInfos = serviceInfos;
+        this.visits = visits;
+    }
 
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
+
+
 
     @ElementCollection(targetClass = Specialization.class)
     @Column(name = "specializations", nullable = false)
