@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import wg.app.model.Gender;
-import wg.app.model.Role;
+import wg.app.model.user.Gender;
+import wg.app.model.user.Role;
 
 import java.time.LocalDate;
 

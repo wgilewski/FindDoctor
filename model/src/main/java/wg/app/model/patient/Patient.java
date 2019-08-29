@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import wg.app.model.Gender;
-import wg.app.model.Role;
-import wg.app.model.User;
+import wg.app.model.user.Gender;
+import wg.app.model.user.Role;
+import wg.app.model.user.User;
 import wg.app.model.Visit;
 import wg.app.model.doctor.Doctor;
 
@@ -23,6 +23,7 @@ import java.util.List;
 @Table(name = "patients")
 public class Patient extends User
 {
+
     @Builder
     public Patient(Long id, String username, String password, Boolean enabled, Role role, String name, String surname, LocalDate dateOfBirth, String email, Gender gender, List<Doctor> favouriteDoctors, List<Visit> visits) {
         super(id, username, password, enabled, role, name, surname, dateOfBirth, email, gender);

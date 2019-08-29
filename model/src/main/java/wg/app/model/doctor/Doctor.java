@@ -1,9 +1,9 @@
 package wg.app.model.doctor;
 
 import lombok.*;
-import wg.app.model.Gender;
-import wg.app.model.Role;
-import wg.app.model.User;
+import wg.app.model.user.Gender;
+import wg.app.model.user.Role;
+import wg.app.model.user.User;
 import wg.app.model.Visit;
 
 import javax.persistence.*;
@@ -14,6 +14,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 
 @Entity
 @Table(name = "doctors")
